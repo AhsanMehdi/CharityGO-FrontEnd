@@ -12,7 +12,7 @@ import { NgohomeComponent } from './components/ngohome/ngohome.component';
 import { NgosignupComponent } from './components/ngosignup/ngosignup.component';
 import { ProjecteditComponent } from './components/projectedit/projectedit.component';
 import { ProjectComponent } from './components/project/project.component';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +29,8 @@ import { ProjectComponent } from './components/project/project.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [],
