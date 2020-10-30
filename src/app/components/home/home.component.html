@@ -1,0 +1,416 @@
+<style>
+
+    input[type=text], input[type=password] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    .sucman {
+        background-color: #ffce00;
+        border-color: black;
+        color: black;
+    }
+    .sucman:hover {
+        background-color: black;
+        color: #ffce00;
+    }
+    /* Set a style for all buttons */
+    /* Extra styles for the cancel button */
+    .cancelbtn {
+        width: auto;
+        padding: 10px 18px;
+        background-color: #f44336;
+    }
+
+    /* Center the image and position the close button */
+    .imgcontainer {
+        text-align: center;
+        margin: 24px 0 12px 0;
+        position: relative;
+    }
+
+    img.avatar {
+        width: 40%;
+        border-radius: 50%;
+    }
+
+    .container {
+        padding: 16px;
+    }
+
+    span.psw {
+        float: right;
+        padding-top: 16px;
+    }
+    .succmann {
+        background-color: black;
+        border-color: #ffce00;
+        color: #ffce00;
+    }
+    .succmann:hover {
+        background-color: #4ab8b8;
+        border-color: black;
+        color: white;
+    }
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+        padding-top: 60px;
+    }
+
+    /* Modal Content/Box */
+    .modal-content {
+        background-color: #fefefe;
+        margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+        border: 1px solid #888;
+        width: 80%; /* Could be more or less, depending on screen size */
+    }
+
+    /* The Close Button (x) */
+    .close {
+        right: 25px;
+        top: 0;
+        color: #000;
+        font-size: 35px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: red;
+        cursor: pointer;
+    }
+
+    /* Add Zoom Animation */
+    .animate {
+        -webkit-animation: animatezoom 0.6s;
+        animation: animatezoom 0.6s
+    }
+
+    @-webkit-keyframes animatezoom {
+        from {-webkit-transform: scale(0)}
+        to {-webkit-transform: scale(1)}
+    }
+
+    @keyframes animatezoom {
+        from {transform: scale(0)}
+        to {transform: scale(1)}
+    }
+
+    /* Change styles for span and cancel button on extra small screens */
+    @media screen and (max-width: 300px) {
+        span.psw {
+            display: block;
+            float: none;
+        }
+        .cancelbtn {
+            width: 100%;
+        }
+    }
+
+
+</style>
+<script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<div class="text-right;" style="background-color: blueviolet" style="text-align: center " >
+
+
+    <button class="btn sucman" onclick="document.getElementById('id01').style.display='block'" style="width:auto;"> Login</button>
+
+    <button class="btn sucman" routerLink="/signuppage"> Sign Up!</button>
+</div>
+
+
+
+
+<div id="id01" class="modal">
+
+    <form class="modal-content animate" action="/action_page.php" method="post">
+        <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <img src="/assets/123.jpg" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+            <div class="col text-center">
+                <button class="btn sucman" type="submit">Login</button>
+                <button class="btn succmann" type="button" routerLink="/signuppage" >Signup!</button>
+
+            </div>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+        </div>
+
+
+        <div class="container" style="background-color:#f1f1f1">
+            <button onclick="document.getElementById('id01').style.display='none'" class="cancelbtn btn float-right">Cancel</button>
+
+        </div>
+    </form>
+</div>
+
+<div class="site-section section-counter" style="background-color: black">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-6 pr-5">
+                <div class="block-48" style="background-color: #ffce00">
+                    <span class="block-48-text-1" >Linked Together</span>
+                    <div class="block-48-counter ftco-number" data-number="1321901">0</div>
+                    <span class="block-48-text-1 mb-4 d-block">Helping Hands </span>
+                    <p class="mb-0"><a href="#" class="btn btn-white px-3 py-2">View Our Program</a></p>
+                </div>
+            </div>
+            <div class="col-md-6 welcome-text">
+                <h2 class="display-4 mb-3" style="color: white">Who Are We?</h2>
+                <p class="lead" style="color: white">CharityGO: Making Donations simpler and easier</p>
+                <p class="mb-4" style="color: white">We help you get through the difficult process of Donating with ease and comfort.</p>
+                <p class="mb-0"><a href="#" class="btn btn-primary px-3 py-2" style="color: black; background-color: #ffce00" >Learn More</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section border-top" style="background-color: black">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4">
+                <div class="media block-6">
+                    <div class="icon"><span class="ion-ios-bulb" style="color: #ffce00"></span></div>
+                    <div class="media-body">
+                        <h3 class="heading" style="color: white">Our Mission</h3>
+                        <p style="color: white">Our Aim is to deliver a platform for donors and Organizations to interact and develop a social network which helps deserving communities grow. </p>
+                        <p><a href="#" class="link-underline" >Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="media block-6" >
+                    <div class="icon"><span class="ion-ios-cash" style="color: #ffce00" ></span></div>
+                    <div class="media-body">
+                        <h3 class="heading" style="color: white">Make Donations</h3>
+                        <p style="color: white">We have made donations simpler and easier. A small donation can go a long way. </p>
+                        <p><a href="#" class="link-underline" >Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="media block-6">
+                    <div class="icon" ><span class="ion-ios-contacts" style="color: #ffce00"></span></div>
+                    <div class="media-body">
+                        <h3 class="heading" style="color: white">We Need Volunteers</h3>
+                        <p style="color: white">Support a cause you care about by Volunteering on a Project through CharityGO.</p>
+                        <p><a href="#" class="link-underline" >Learn More</a></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div> <!-- .site-section -->
+
+
+
+
+
+    <div class="site-section fund-raisers" style="background-color: black">
+        <div class="container">
+            <div class="row mb-3 justify-content-center">
+                <div class="col-md-8 text-center">
+                    <h2 style="color: white">Latest Donations</h2>
+                    <p class="lead" style="color: white">Donating is also one way to show us that you find our work helpful and valuable. Knowing this is a huge source of inspiration for our team. If you want to help us do more, please donate today – it will make a real difference.</p>
+                    <p class="mb-5"><a href="#" class="link-underline">View All Donations</a></p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 col-lg-3 mb-5">
+                    <div class="person-donate text-center">
+                        <img src="/assets/images/person_1.jpg" alt="Image placeholder" class="img-fluid">
+                        <div class="donate-info">
+                            <h2 style="color: white">Jorge Smith</h2>
+                            <span class="time d-block mb-3" style="color: white">Donated Just now</span>
+                            <p style="color: white">Donated <span class="text-success" style="color: white">$252</span> <br> <em style="color: white">for</em> <a href="#" class="link-underline fundraise-item">Water Is Life. Clean Water In Urban Area</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-5">
+                    <div class="person-donate text-center">
+                        <img src="/assets/images/person_2.jpg" alt="Image placeholder" class="img-fluid">
+                        <div class="donate-info">
+                            <h2 style="color: white">Christine Charles</h2>
+                            <span class="time d-block mb-3" style="color: white">Donated 1 hour ago</span>
+                            <p style="color: white">Donated <span class="text-success" style="color: white">$400</span> <br> <em style="color: white">for</em> <a href="#" class="link-underline fundraise-item">Children Needs Education</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-5">
+                    <div class="person-donate text-center">
+                        <img src="/assets/images/person_3.jpg" alt="Image placeholder" class="img-fluid">
+                        <div class="donate-info">
+                            <h2 style="color: white">Albert Sluyter</h2>
+                            <span class="time d-block mb-3" style="color: white">Donated 4 hours ago</span>
+                            <p style="color: white">Donated <span class="text-success">$1,200</span> <br> <em style="color: white">for</em> <a href="#" class="link-underline fundraise-item">Need Shelter for Children in Africa</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3 mb-5">
+                    <div class="person-donate text-center">
+                        <img src="/assets/images/person_4.jpg" alt="Image placeholder" class="img-fluid">
+                        <div class="donate-info">
+                            <h2 style="color: white">Andrew Holloway</h2>
+                            <span class="time d-block mb-3" style="color: white">Donated 9 hours ago</span>
+                            <p style="color: white">Donated <span class="text-success">$100</span> <br> <em style="color: white">for</em> <a href="#" class="link-underline fundraise-item">Water Is Life. Clean Water In Urban Area</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- .section -->
+
+    <div class="featured-section overlay-color-2" style="background-image: url('/assets/images/bg_3.jpg');">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6">
+                    <img src="/assets/images/bg_3.jpg" alt="Image placeholder" class="img-fluid">
+                </div>
+
+                <div class="col-md-6 pl-md-5">
+                    <span class="featured-text d-block mb-3" style="color: black"><strong>Success Stories</strong></span>
+                    <h2>Water Is Life. We Successfuly Provide Clean Water in South East Asia</h2>
+                    <p class="mb-3">CharityGO helped us reach thousands of people who helped us reach our goal faster. We joined hands with a number of NGOs in this regard ...</p>
+                    <span class="fund-raised d-block mb-5" style="color: black">We have raised $100,000</span>
+
+                    <p><a href="#" class="btn btn-success btn-hover-white py-3 px-5">Read The Full Story</a></p>
+                </div>
+
+            </div>
+        </div>
+
+    </div> <!-- .featured-donate -->
+
+    <div style="background-color: black"  >
+        <div class="container" style="background-color: black">
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <h2 style="color: white">Latest News</h2>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="post-entry">
+                        <a href="#" class="mb-3 img-wrap">
+                            <img src="/assets/images/img_4.jpg" alt="Image placeholder" class="img-fluid">
+                        </a>
+                        <h3><a href="#" style="color: white">Be A Volunteer Today</a></h3>
+                        <span class="date mb-4 d-block text-muted" style="color: white">Jan 20,2020</span>
+                        <p style="color: white">Our need for volunteers is constant and continues to evolve as we navigate the Donation Process. Please rest assured that we are working with NGOs to help local communities grow. Volunteer opportunities include supporting blood donations and delivering much-needed services to your community...</p>
+                        <p><a href="#" class="link-underline" >Read More</a></p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="post-entry">
+                        <a href="#" class="mb-3 img-wrap">
+                            <img src="/assets/images/img_5.jpg" alt="Image placeholder" class="img-fluid">
+                        </a>
+                        <h3><a href="#" style="color: white">You May Save The Life of A Child</a></h3>
+                        <span class="date mb-4 d-block text-muted" style="color: white">July 26, 2018</span>
+                        <p style="color: white">Thousands of children are stuck in a never ending loop of child labour. Donate now to help free these children and provide them with a quality life they deserve...</p>
+                        <p><a href="#" class="link-underline">Read More</a></p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0">
+                    <div class="post-entry">
+                        <a href="#" class="mb-3 img-wrap">
+                            <img src="/assets/images/img_6.jpg" alt="Image placeholder" class="img-fluid">
+                        </a>
+                        <h3><a href="#" style="color: white">Children That Needs Care</a></h3>
+                        <span class="date mb-4 d-block text-muted" style="color: white">July 26, 2018</span>
+                        <p style="color: white">Health problems in children often stops them for succeeding in their life goals. Donate now to help Children get proper Health Care...</p>
+                        <p><a href="#" class="link-underline">Read More</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> <!-- .section -->
+
+    <div class="featured-section overlay-color-2" style="background-image: url('/assets/images/bg_2.jpg');">
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-6 mb-5 mb-md-0">
+                    <img src="/assets/images/bg_2.jpg" alt="Image placeholder" class="img-fluid">
+                </div>
+
+                <div class="col-md-6 pl-md-5">
+
+                    <div class="form-volunteer">
+
+                        <h2>Be A Volunteer Today</h2>
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <!-- <label for="name">Name</label> -->
+                                <input type="text" class="form-control py-2" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="email">Email</label> -->
+                                <input type="text" class="form-control py-2" id="email" placeholder="Enter your email">
+                            </div>
+                            <div class="form-group">
+                                <!-- <label for="v_message">Email</label> -->
+                                <textarea name="v_message" id="" cols="30" rows="3" class="form-control py-2" placeholder="Write your message"></textarea>
+                                <!-- <input type="text" class="form-control py-2" id="email"> -->
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-white px-5 py-2" value="Send">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
