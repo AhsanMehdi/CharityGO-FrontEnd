@@ -7,6 +7,7 @@ import {ProjectComponent} from './components/project/project.component';
 import {ProjecteditComponent} from './components/projectedit/projectedit.component';
 import {NgosignupComponent} from './components/ngosignup/ngosignup.component';
 import {NgohomeComponent} from './components/ngohome/ngohome.component';
+import {SigninpageComponent} from './components/signinpage/signinpage.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,9 @@ const routes: Routes = [
   },
   {
     path: 'signuppage', component: SignuppageComponent
+  },
+  {
+    path: 'signinpage', component: SigninpageComponent
   },
   {
     path: 'home', component: HomeComponent

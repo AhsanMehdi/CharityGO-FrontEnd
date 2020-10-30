@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/home/home.component';
 import { SignuppageComponent } from './components/signuppage/signuppage.component';
+import { SigninpageComponent } from './components/signinpage/signinpage.component';
 import { DonorhomeComponent } from './components/donorhome/donorhome.component';
 import { NgohomeComponent } from './components/ngohome/ngohome.component';
 import { NgosignupComponent } from './components/ngosignup/ngosignup.component';
@@ -20,6 +21,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     HomeComponent,
     SignuppageComponent,
+    SigninpageComponent,
     DonorhomeComponent,
     NgohomeComponent,
     NgosignupComponent,
