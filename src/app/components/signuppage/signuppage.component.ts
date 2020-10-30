@@ -12,6 +12,7 @@ import { Router } from '@angular/router'
 export class SignuppageComponent implements OnInit {
 
   registerNgoForm: FormGroup;
+  registerDonorForm: FormGroup;
   loading = false;
   submitted = false;
 
@@ -27,6 +28,11 @@ export class SignuppageComponent implements OnInit {
           ngoName: ['', Validators.required],
           password: ['', [Validators.required, Validators.minLength(6)]]
       });
+
+    this.registerDonorForm = this.formBuilder.group({
+          email: ['',Validators.required],
+          password: ['', [Validators.required, Validators.minLength(6)]]
+       });
   }
   donorformshow:boolean=false;
   ngoFormShow:boolean=true;
@@ -50,7 +56,7 @@ export class SignuppageComponent implements OnInit {
 
         this.submitted = true;
 
-        console.log(this.registerNgoForm)
+       
 
         // stop here if form is invalid
         if (this.registerNgoForm.invalid) {
@@ -70,6 +76,32 @@ export class SignuppageComponent implements OnInit {
                     this.loading = false;
                 });
     }
+
+    onDonorSubmit() {
+
+      this.submitted = true;
+      
+     
+
+      // stop here if form is invalid
+      if (this.registerDonorForm.invalid) {
+
+          return;
+      }
+
+      this.loading = true;
+      this.backendService.registerDonor(this.registerDonorForm.value)
+          .pipe(first())
+          .subscribe(
+              data => {
+                  this.alertService.success('Registration successful', true);
+                  this.router.navigate(['/']);
+              },
+              error => {
+                  this.alertService.error(error);
+                  this.loading = false;
+              });
+  }
 
 
 

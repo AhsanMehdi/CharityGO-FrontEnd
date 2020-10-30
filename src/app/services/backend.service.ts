@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { Ngo } from '../_models';
+import { Ngo, Donor } from '../_models';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -19,4 +20,9 @@ export class BackendService {
   registerNgo(ngo: Ngo) {
     return this.httpClient.post(this.REST_API_SERVER+"/ngo-account-controllers", ngo);
   }
+
+  registerDonor(donor: Donor) {
+    return this.httpClient.post(this.REST_API_SERVER+"/donor-account-controllers", donor);
+  }
+
 }
