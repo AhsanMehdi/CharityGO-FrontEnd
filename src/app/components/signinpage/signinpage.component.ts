@@ -11,8 +11,8 @@ import { Router } from '@angular/router'
 })
 export class SigninpageComponent implements OnInit {
 
-  registerNgoForm: FormGroup;
-  registerDonorForm: FormGroup;
+
+  siginForm: FormGroup;
   loading = false;
   submitted = false;
 
@@ -23,84 +23,48 @@ export class SigninpageComponent implements OnInit {
     private alertService: AlertService) { }
 
   ngOnInit() {
-    this.registerNgoForm = this.formBuilder.group({
-          email: ['',Validators.required],
-          ngoName: ['', Validators.required],
-          password: ['', [Validators.required, Validators.minLength(6)]]
-      });
 
-    this.registerDonorForm = this.formBuilder.group({
+    this.siginForm = this.formBuilder.group({
           email: ['',Validators.required],
           password: ['', [Validators.required, Validators.minLength(6)]]
        });
   }
-  donorformshow:boolean=false;
-  ngoFormShow:boolean=true;
 
-  donorSingup(){
-      this.donorformshow=true;
-      this.ngoFormShow=false;
-  }
 
-  ngoSingup(){
-    this.donorformshow=false;
-      this.ngoFormShow=true;
-  }
+
 
 
 
     // convenience getter for easy access to form fields
-    get f() { return this.registerNgoForm.controls; }
+    get f() { return this.siginForm.controls; }
 
-    onNgoSubmit() {
 
-        this.submitted = true;
 
-       
-
-        // stop here if form is invalid
-        if (this.registerNgoForm.invalid) {
-            return;
-        }
-
-        this.loading = true;
-        this.backendService.registerNgo(this.registerNgoForm.value)
-            .pipe(first())
-            .subscribe(
-                data => {
-                    this.alertService.success('Registration successful', true);
-                    this.router.navigate(['/']);
-                },
-                error => {
-                    this.alertService.error(error);
-                    this.loading = false;
-                });
-    }
-
-    onDonorSubmit() {
+    onSigninSubmit() {
 
       this.submitted = true;
       
      
 
       // stop here if form is invalid
-      if (this.registerDonorForm.invalid) {
+      if (this.siginForm.invalid) {
 
           return;
       }
+      this.router.navigate(['/donorhome']);
 
-      this.loading = true;
-      this.backendService.registerDonor(this.registerDonorForm.value)
-          .pipe(first())
-          .subscribe(
-              data => {
-                  this.alertService.success('Registration successful', true);
-                  this.router.navigate(['/']);
-              },
-              error => {
-                  this.alertService.error(error);
-                  this.loading = false;
-              });
+      // this.loading = true;
+      // this.backendService.registerDonor(this.siginForm.value)
+      //     .pipe(first())
+      //     .subscribe(
+      //         data => {
+      //             this.alertService.success('Registration successful', true);
+      //             this.router.navigate(['/']);
+      //         },
+      //         error => {
+      //             this.alertService.error(error);
+      //             this.loading = false;
+      //         });
   }
 
 
